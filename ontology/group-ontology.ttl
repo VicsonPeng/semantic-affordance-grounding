@@ -1,0 +1,96 @@
+@prefix g02:     <https://hcis.io/ontology/aicapstone/2026/group02/> .
+@prefix cap:     <https://hcis.io/ontology/aicapstone/2026/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+# ==============================================================
+# Ontology Metadata
+# ==============================================================
+
+<https://hcis.io/ontology/aicapstone/2026/group02>
+    a owl:Ontology ;
+    owl:imports <https://hcis.io/ontology/aicapstone/2026> ;
+    rdfs:label "AI Capstone 2026 Group 02 Ontology"@en ;
+    rdfs:comment
+        "Group 02 ontology for semantic affordance grounding of the cup-stacking task in the AI Capstone 2026 course project."@en ;
+    dcterms:title "AI Capstone 2026 Group 02 Ontology"@en ;
+    dcterms:description
+        "This ontology extends the course affordance vocabulary with group-specific object instances and graspability inference rules for the cup-stacking task environment."@en ;
+    dcterms:creator g02:group02 ;
+    dcterms:created "2026-05-31"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "g02" ;
+    vann:preferredNamespaceUri "https://hcis.io/ontology/aicapstone/2026/group02/" .
+
+g02:group02
+    a foaf:Group ;
+    foaf:name "AI Capstone 2026 Group 02"@en .
+
+# ==============================================================
+# TODO: Person B — GraspableObject Inference Rule
+#
+# Define cap:GraspableObject using owl:equivalentClass so that
+# the reasoner can infer which individuals are graspable.
+#
+# Pattern (from Section 11 of homework PDF):
+#
+#   cap:GraspableObject
+#       a owl:Class ;
+#       owl:equivalentClass [
+#           a owl:Class ;
+#           owl:intersectionOf (
+#               cap:PhysicalObject
+#               [ a owl:Restriction ;
+#                 owl:onProperty cap:hasAffordance ;
+#                 owl:someValuesFrom cap:GraspingAffordance ]
+#           )
+#       ] .
+#
+# Add rdfs:label and rdfs:comment to this class as well.
+# ==============================================================
+
+
+
+# ==============================================================
+# TODO: Person C — Cup Stacking Instances (Primary Task)
+#
+# Define at minimum:
+#   g02:blueCup01   a cap:Cup
+#   g02:pinkCup01   a cap:Cup
+#
+# Each instance should include:
+#   cap:hasAffordance      (link to a GraspingAffordance individual)
+#   cap:hasTaskRole        cap:TargetObject
+#   cap:hasColor           "blue" / "pink"
+#   cap:hasObjectLabel     (label used in your course project, e.g. "blue_cup")
+#   cap:hasPoseFrame       (pose-frame id from your simulation, if available)
+#   rdfs:label             human-readable name
+#   rdfs:comment           short explanation
+#
+# Also define the affordance individuals, e.g.:
+#   g02:blueCupGraspingAffordance   a cap:GraspingAffordance
+#   g02:pinkCupGraspingAffordance   a cap:GraspingAffordance
+# ==============================================================
+
+
+
+# ==============================================================
+# TODO: Person D — Baseline Object Instances (Required by Section 10)
+#
+# Define at minimum:
+#   g02:knife01      a cap:Knife      → GraspingAffordance + TargetObject
+#   g02:fork01       a cap:Fork       → GraspingAffordance + TargetObject
+#   g02:plate01      a cap:Plate      → SupportAffordance  + ReferenceObject
+#   g02:toyBlock01   a cap:ToyBlock   → GraspingAffordance + CollectableObject
+#   g02:basket01     a cap:Basket     → ContainmentAffordance + ContainerTarget
+#
+# Each instance needs at minimum:
+#   cap:hasAffordance, cap:hasTaskRole, cap:hasObjectLabel
+#   rdfs:label, rdfs:comment
+# ==============================================================
