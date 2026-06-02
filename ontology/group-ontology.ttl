@@ -69,3 +69,83 @@ cap:GraspableObject
               owl:someValuesFrom cap:GraspingAffordance ]
         )
     ] .
+
+# ==============================================================
+# Group-specific schema extensions (gripper capability)
+# ==============================================================
+
+g02:hasMaxGripWidth
+    a owl:DatatypeProperty ;
+    rdfs:domain cap:EndEffector ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "has maximum grip width"@en ;
+    rdfs:comment
+        "Maximum object width (metres) an end effector can open to and grip. Group 02 extension relating gripper capability to object width (cap:hasApproxWidth)."@en .
+
+g02:hasContainerTarget
+    a owl:ObjectProperty ;
+    rdfs:domain cap:Task ;
+    rdfs:range cap:PhysicalObject ;
+    rdfs:label "has container target"@en ;
+    rdfs:comment
+        "Relates a task to the object that receives/collects other objects (e.g. the basket). Being a container target does NOT make an object graspable. Group 02 extension."@en .
+
+g02:robot01
+    a cap:RobotAgent ;
+    rdfs:label "Group 02 robot agent"@en ;
+    rdfs:comment "The gripper-equipped robot agent observing the Group 02 task environment."@en .
+
+g02:gripper01
+    a cap:EndEffector ;
+    rdfs:label "parallel-jaw gripper 01"@en ;
+    rdfs:comment "The parallel-jaw gripper mounted on g02:robot01."@en ;
+    g02:hasMaxGripWidth "0.085"^^xsd:decimal .
+
+# ==============================================================
+# Person C — Cup Stacking Instances (Primary Task)
+# Cups are TargetObjects with grasping + stackability affordances => graspable.
+# ==============================================================
+
+g02:blueCupGraspingAffordance
+    a cap:GraspingAffordance ;
+    rdfs:label "blue cup grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of the blue cup; this is what triggers the GraspableObject inference."@en .
+
+g02:blueCupStackingAffordance
+    a cap:StackabilityAffordance ;
+    rdfs:label "blue cup stackability affordance"@en ;
+    rdfs:comment "Stackability affordance of the blue cup in the cup-stacking task."@en .
+
+g02:blueCup01
+    a cap:Cup ;
+    rdfs:label "blue cup 01"@en ;
+    rdfs:comment "The blue cup instance in Group 02's cup-stacking task environment."@en ;
+    cap:hasColor "blue" ;
+    cap:hasObjectLabel "blue_cup" ;
+    cap:hasTaskRole cap:TargetObject ;
+    cap:hasPoseFrame "world/object_blue_cup" ;
+    cap:hasApproxWidth "0.070"^^xsd:decimal ;
+    cap:hasAffordance g02:blueCupGraspingAffordance , g02:blueCupStackingAffordance ;
+    cap:canBeManipulatedBy g02:gripper01 .
+
+g02:pinkCupGraspingAffordance
+    a cap:GraspingAffordance ;
+    rdfs:label "pink cup grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of the pink cup."@en .
+
+g02:pinkCupStackingAffordance
+    a cap:StackabilityAffordance ;
+    rdfs:label "pink cup stackability affordance"@en ;
+    rdfs:comment "Stackability affordance of the pink cup in the cup-stacking task."@en .
+
+g02:pinkCup01
+    a cap:Cup ;
+    rdfs:label "pink cup 01"@en ;
+    rdfs:comment "The pink cup instance in Group 02's cup-stacking task environment."@en ;
+    cap:hasColor "pink" ;
+    cap:hasObjectLabel "pink_cup" ;
+    cap:hasTaskRole cap:TargetObject ;
+    cap:hasPoseFrame "world/object_pink_cup" ;
+    cap:hasApproxWidth "0.070"^^xsd:decimal ;
+    cap:hasAffordance g02:pinkCupGraspingAffordance , g02:pinkCupStackingAffordance ;
+    cap:canBeManipulatedBy g02:gripper01 .
