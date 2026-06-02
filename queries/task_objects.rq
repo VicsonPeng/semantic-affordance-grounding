@@ -1,0 +1,47 @@
+# Person E — contrast query: every task object with its (leaf) type, task role,
+# affordances, and whether the reasoner inferred it graspable.
+#
+# Shows task relevance != graspability: the plate and basket appear (they are
+# task objects with affordances) but their ?graspable column is empty, because
+# they carry support / containment affordances rather than a grasping affordance.
+# Run over the INFERRED model. FILTERs drop the superclasses OWL RL materialises
+# (cap:PhysicalObject, cap:Affordance, cap:GraspableObject, blank nodes) so each
+# object yields one row.
+
+PREFIX cap:  <https://hcis.io/ontology/aicapstone/2026/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?object ?type ?role
+       (GROUP_CONCAT(DISTINCT ?affLocal ; separator=", ") AS ?affordances)
+       ?graspable
+WHERE {
+    ?obj cap:hasObjectLabel ?objLabel .
+
+    ?obj a ?typeIri .
+    ?typeIri rdfs:subClassOf cap:PhysicalObject .
+    FILTER(isIRI(?typeIri)
+           && ?typeIri != cap:PhysicalObject
+           && ?typeIri != cap:GraspableObject)
+
+    OPTIONAL { ?obj cap:hasTaskRole ?roleIri . }
+
+    OPTIONAL {
+        ?obj cap:hasAffordance ?aff .
+        ?aff a ?affType .
+        ?affType rdfs:subClassOf cap:Affordance .
+        FILTER(?affType != cap:Affordance)
+        BIND(REPLACE(STR(?affType), "^.*/", "") AS ?affLocal)
+    }
+
+    OPTIONAL {
+        ?obj a cap:GraspableObject .
+        BIND("yes" AS ?graspable)
+    }
+
+    BIND(REPLACE(STR(?obj),     "^.*/", "") AS ?object)
+    BIND(REPLACE(STR(?typeIri), "^.*/", "") AS ?type)
+    BIND(REPLACE(STR(?roleIri), "^.*/", "") AS ?role)
+}
+GROUP BY ?object ?type ?role ?graspable
+ORDER BY ?object

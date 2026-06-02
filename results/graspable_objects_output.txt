@@ -1,0 +1,13 @@
+# Query: queries/graspable_objects.rq
+# Executed over the OWL RL inferred model.
+
+obj                                                         | label     | role                                                      
+------------------------------------------------------------+-----------+-----------------------------------------------------------
+https://hcis.io/ontology/aicapstone/2026/group02/blueCup01  | blue_cup  | https://hcis.io/ontology/aicapstone/2026/TargetObject     
+https://hcis.io/ontology/aicapstone/2026/group02/fork01     | fork      | https://hcis.io/ontology/aicapstone/2026/TargetObject     
+https://hcis.io/ontology/aicapstone/2026/group02/knife01    | knife     | https://hcis.io/ontology/aicapstone/2026/TargetObject     
+https://hcis.io/ontology/aicapstone/2026/group02/pinkCup01  | pink_cup  | https://hcis.io/ontology/aicapstone/2026/TargetObject     
+https://hcis.io/ontology/aicapstone/2026/group02/toyBlock01 | toy_block | https://hcis.io/ontology/aicapstone/2026/CollectableObject
+https://hcis.io/ontology/aicapstone/2026/group02/toyBlock02 | toy_block | https://hcis.io/ontology/aicapstone/2026/CollectableObject
+
+(6 row(s))

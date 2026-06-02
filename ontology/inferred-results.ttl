@@ -1,0 +1,1139 @@
+@prefix cap: <https://hcis.io/ontology/aicapstone/2026/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix g02: <https://hcis.io/ontology/aicapstone/2026/group02/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+_:n24e15451f98e4fcfb85943c93941ed80b1 a rdfs:Class,
+        owl:Class ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:GraspableObject,
+        cap:PhysicalObject ;
+    owl:equivalentClass _:n24e15451f98e4fcfb85943c93941ed80b1,
+        cap:GraspableObject ;
+    owl:intersectionOf ( cap:PhysicalObject _:n24e15451f98e4fcfb85943c93941ed80b2 ) .
+
+owl:Nothing a rdfs:Class,
+        owl:Class ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b1,
+        _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb2,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb5,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        _:nacdea7238cc94273af924a4b1fa6333fb7,
+        cap:Affordance,
+        cap:Basket,
+        cap:CollectableObject,
+        cap:ContainerTarget,
+        cap:ContainmentAffordance,
+        cap:Cup,
+        cap:EndEffector,
+        cap:Fork,
+        cap:GraspableObject,
+        cap:GraspingAffordance,
+        cap:Knife,
+        cap:ManipulationTask,
+        cap:PhysicalObject,
+        cap:Plate,
+        cap:ReferenceObject,
+        cap:RobotAgent,
+        cap:StackabilityAffordance,
+        cap:SupportAffordance,
+        cap:TargetObject,
+        cap:Task,
+        cap:TaskRole,
+        cap:ToyBlock ;
+    owl:equivalentClass owl:Nothing .
+
+owl:Thing a rdfs:Class,
+        owl:Class ;
+    owl:equivalentClass rdfs:Resource,
+        owl:Thing .
+
+cap:Affordance a rdfs:Class,
+        owl:Class ;
+    rdfs:label "affordance"@en ;
+    rdfs:comment "An action possibility associated with an object in relation to a robot capability and task context."@en ;
+    owl:equivalentClass cap:Affordance .
+
+cap:Basket a rdfs:Class,
+        owl:Class ;
+    rdfs:label "basket"@en ;
+    rdfs:comment "A container target used to receive toy blocks in the toy-block-collection task."@en ;
+    rdfs:subClassOf _:nacdea7238cc94273af924a4b1fa6333fb7,
+        cap:PhysicalObject ;
+    owl:equivalentClass cap:Basket .
+
+cap:CollectableObject a rdfs:Class,
+        owl:Class,
+        cap:TaskRole ;
+    rdfs:label "collectable object"@en ;
+    rdfs:comment "A task role for an object that should be collected into another object or location."@en ;
+    rdfs:subClassOf cap:TaskRole ;
+    owl:equivalentClass cap:CollectableObject .
+
+cap:ContainerTarget a rdfs:Class,
+        owl:Class,
+        cap:TaskRole ;
+    rdfs:label "container target"@en ;
+    rdfs:comment "A task role for an object that receives or contains other objects."@en ;
+    rdfs:subClassOf cap:TaskRole ;
+    owl:equivalentClass cap:ContainerTarget .
+
+cap:ContainmentAffordance a rdfs:Class,
+        owl:Class ;
+    rdfs:label "containment affordance"@en ;
+    rdfs:comment "An affordance by which an object can contain or receive other objects."@en ;
+    rdfs:subClassOf cap:Affordance ;
+    owl:equivalentClass cap:ContainmentAffordance .
+
+cap:Cup a rdfs:Class,
+        owl:Class ;
+    rdfs:label "cup"@en ;
+    rdfs:comment "A container-like object used in the cup-stacking task."@en ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb2,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:PhysicalObject ;
+    owl:equivalentClass cap:Cup .
+
+cap:EndEffector a rdfs:Class,
+        owl:Class ;
+    rdfs:label "end effector"@en ;
+    rdfs:comment "A robot component used to physically interact with objects, such as a gripper."@en ;
+    owl:equivalentClass cap:EndEffector .
+
+cap:Fork a rdfs:Class,
+        owl:Class ;
+    rdfs:label "fork"@en ;
+    rdfs:comment "A cutlery object to be placed in the cutlery-arrangement task."@en ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:PhysicalObject ;
+    owl:equivalentClass cap:Fork .
+
+cap:GraspableObject a rdfs:Class,
+        owl:Class ;
+    rdfs:label "graspable object"@en ;
+    rdfs:comment "A physical object that the reasoner classifies as graspable because it is a cap:PhysicalObject and has at least one cap:GraspingAffordance. Membership is INFERRED, never asserted directly on individuals."@en ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b1,
+        _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:PhysicalObject ;
+    owl:equivalentClass _:n24e15451f98e4fcfb85943c93941ed80b1,
+        cap:GraspableObject ;
+    skos:scopeNote "Local reasoning target for this homework; not equivalent to any external role such as soma:MovedObject (see ontology/imports/course-alignment.ttl)."@en .
+
+cap:GraspingAffordance a rdfs:Class,
+        owl:Class ;
+    rdfs:label "grasping affordance"@en ;
+    rdfs:comment "An affordance by which an object may be grasped, held, lifted, or repositioned by a robot gripper."@en ;
+    rdfs:subClassOf cap:Affordance ;
+    owl:equivalentClass cap:GraspingAffordance .
+
+cap:Knife a rdfs:Class,
+        owl:Class ;
+    rdfs:label "knife"@en ;
+    rdfs:comment "A cutlery object to be placed in the cutlery-arrangement task."@en ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:PhysicalObject ;
+    owl:equivalentClass cap:Knife .
+
+cap:ManipulationTask a rdfs:Class,
+        owl:Class ;
+    rdfs:label "manipulation task"@en ;
+    rdfs:comment "A task in which a robot changes the pose, state, or arrangement of physical objects."@en ;
+    rdfs:subClassOf cap:Task ;
+    owl:equivalentClass cap:ManipulationTask .
+
+cap:PhysicalObject a rdfs:Class,
+        owl:Class ;
+    rdfs:label "physical object"@en ;
+    rdfs:comment "A material object in the task environment that may be perceived, manipulated, used as a reference object, or assigned a task role."@en ;
+    owl:equivalentClass cap:PhysicalObject .
+
+cap:Plate a rdfs:Class,
+        owl:Class ;
+    rdfs:label "plate"@en ;
+    rdfs:comment "A reference object used for arranging cutlery in the cutlery-arrangement task."@en ;
+    rdfs:subClassOf _:nacdea7238cc94273af924a4b1fa6333fb5,
+        cap:PhysicalObject ;
+    owl:equivalentClass cap:Plate .
+
+cap:ReferenceObject a rdfs:Class,
+        owl:Class,
+        cap:TaskRole ;
+    rdfs:label "reference object"@en ;
+    rdfs:comment "A task role for an object used as a spatial or semantic reference for arranging other objects."@en ;
+    rdfs:subClassOf cap:TaskRole ;
+    owl:equivalentClass cap:ReferenceObject .
+
+cap:RobotAgent a rdfs:Class,
+        owl:Class ;
+    rdfs:label "robot agent"@en ;
+    rdfs:comment "A robot or robot-controlled agent that can perceive objects, reason over the ontology, and act in the task environment."@en ;
+    owl:equivalentClass cap:RobotAgent .
+
+cap:StackabilityAffordance a rdfs:Class,
+        owl:Class ;
+    rdfs:label "stackability affordance"@en ;
+    rdfs:comment "An affordance by which an object can participate in a stacking relation with another object."@en ;
+    rdfs:subClassOf cap:Affordance ;
+    owl:equivalentClass cap:StackabilityAffordance .
+
+cap:SupportAffordance a rdfs:Class,
+        owl:Class ;
+    rdfs:label "support affordance"@en ;
+    rdfs:comment "An affordance by which an object can support the placement or arrangement of other objects."@en ;
+    rdfs:subClassOf cap:Affordance ;
+    owl:equivalentClass cap:SupportAffordance .
+
+cap:TargetObject a rdfs:Class,
+        owl:Class,
+        cap:TaskRole ;
+    rdfs:label "target object"@en ;
+    rdfs:comment "A task role for an object that is directly acted upon or manipulated."@en ;
+    rdfs:subClassOf cap:TaskRole ;
+    owl:equivalentClass cap:TargetObject .
+
+cap:Task a rdfs:Class,
+        owl:Class ;
+    rdfs:label "task"@en ;
+    rdfs:comment "A goal-directed activity to be performed or evaluated in the course project."@en ;
+    owl:equivalentClass cap:Task .
+
+cap:TaskRole a rdfs:Class,
+        owl:Class ;
+    rdfs:label "task role"@en ;
+    rdfs:comment "A role that an object plays within a task."@en ;
+    owl:equivalentClass cap:TaskRole .
+
+cap:ToyBlock a rdfs:Class,
+        owl:Class ;
+    rdfs:label "toy block"@en ;
+    rdfs:comment "A small object to be collected into the basket in the toy-block-collection task."@en ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:PhysicalObject ;
+    owl:equivalentClass cap:ToyBlock .
+
+rdf:HTML a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+rdf:PlainLiteral a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+rdf:XMLLiteral a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+rdf:langString a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+rdfs:isDefinedBy a owl:AnnotationProperty .
+
+rdfs:seeAlso a owl:AnnotationProperty .
+
+xsd:NCName a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:NMTOKEN a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:Name a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:anyURI a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:base64Binary a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:boolean a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:byte a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:dateTime a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:dateTimeStamp a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:double a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:float a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:hexBinary a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:int a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:integer a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:language a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:long a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:negativeInteger a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:nonNegativeInteger a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:nonPositiveInteger a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:normalizedString a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:positiveInteger a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:short a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:time a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:token a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:unsignedByte a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:unsignedInt a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:unsignedLong a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+xsd:unsignedShort a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+owl:backwardCompatibleWith a owl:AnnotationProperty .
+
+owl:deprecated a owl:AnnotationProperty .
+
+owl:incompatibleWith a owl:AnnotationProperty .
+
+owl:priorVersion a owl:AnnotationProperty .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+cap:group02 a owl:Ontology ;
+    rdfs:label "AI Capstone 2026 Group 02 Ontology"@en ;
+    dcterms:created "2026-05-31"^^xsd:date ;
+    dcterms:creator g02:group02 ;
+    dcterms:description "This ontology extends the course affordance vocabulary with group-specific object instances, a gripper-capability extension, and the graspability inference rule for the Group 02 task environment."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:title "AI Capstone 2026 Group 02 Ontology"@en ;
+    vann:preferredNamespacePrefix "g02" ;
+    vann:preferredNamespaceUri "https://hcis.io/ontology/aicapstone/2026/group02/" ;
+    rdfs:comment "Group 02 ontology for semantic affordance grounding. The primary task is cup stacking; the cutlery-arrangement and toy-block-collection baseline objects are also modeled. It imports the shared course vocabulary, supplies the GraspableObject inference rule, and declares the task object instances."@en ;
+    owl:imports <https://hcis.io/ontology/aicapstone/2026> .
+
+g02:cupStackingTask a cap:ManipulationTask,
+        cap:Task ;
+    rdfs:label "cup stacking task"@en ;
+    rdfs:comment "Primary task: stack the blue and pink cups; both cups are manipulation targets."@en ;
+    cap:hasTargetObject g02:blueCup01,
+        g02:pinkCup01 .
+
+g02:cutleryArrangementTask a cap:ManipulationTask,
+        cap:Task ;
+    rdfs:label "cutlery arrangement task"@en ;
+    rdfs:comment "Arrange the knife and fork relative to the plate; the plate is the placement reference."@en ;
+    cap:hasReferenceObject g02:plate01 ;
+    cap:hasTargetObject g02:fork01,
+        g02:knife01 .
+
+g02:robot01 a cap:RobotAgent ;
+    rdfs:label "Group 02 robot agent"@en ;
+    rdfs:comment "The gripper-equipped robot agent observing the Group 02 task environment."@en .
+
+g02:toyBlockCollectionTask a cap:ManipulationTask,
+        cap:Task ;
+    rdfs:label "toy block collection task"@en ;
+    rdfs:comment "Collect the toy blocks into the basket; the basket is the container target."@en ;
+    g02:hasContainerTarget g02:basket01 ;
+    cap:hasTargetObject g02:toyBlock01,
+        g02:toyBlock02 .
+
+<https://hcis.io/ontology/aicapstone/2026> a owl:Ontology ;
+    rdfs:label "AI Capstone 2026 Course Ontology"@en ;
+    dcterms:created "2026-05-22"^^xsd:date ;
+    dcterms:creator cap:ccyont ;
+    dcterms:description "This ontology defines a compact course vocabulary for representing physical task objects, task roles, manipulation affordances, grounding identifiers, and inferable graspability in the AI Capstone 2026 Physical AI project."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:title "AI Capstone 2026 Course Ontology"@en ;
+    vann:preferredNamespacePrefix "cap" ;
+    vann:preferredNamespaceUri "https://hcis.io/ontology/aicapstone/2026/" ;
+    rdfs:comment "A reduced educational ontology profile for semantic and affordance grounding of graspable objects in the AI Capstone 2026 course project."@en .
+
+cap:ccyont a foaf:Person ;
+    foaf:mbox <mailto:ccy@hptp.org> ;
+    foaf:name "Chun-yien Chang"@en .
+
+g02:basket01 a _:nacdea7238cc94273af924a4b1fa6333fb7,
+        cap:Basket,
+        cap:PhysicalObject ;
+    rdfs:label "basket 01"@en ;
+    rdfs:comment "Baseline basket instance, the container target in the toy-block-collection task — not a grasp target."@en ;
+    cap:hasAffordance g02:basketContainmentAffordance ;
+    cap:hasApproxWidth 0.300 ;
+    cap:hasColor "brown" ;
+    cap:hasObjectLabel "basket" ;
+    cap:hasPoseFrame "world/object_basket" ;
+    cap:hasTaskRole cap:ContainerTarget .
+
+g02:basketContainmentAffordance a cap:Affordance,
+        cap:ContainmentAffordance ;
+    rdfs:label "basket containment affordance"@en ;
+    rdfs:comment "Containment affordance of the basket. The basket has NO grasping affordance, so it is not inferred as graspable."@en .
+
+g02:blueCup01 a _:n24e15451f98e4fcfb85943c93941ed80b1,
+        _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb2,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:Cup,
+        cap:GraspableObject,
+        cap:PhysicalObject ;
+    rdfs:label "blue cup 01"@en ;
+    rdfs:comment "The blue cup instance in Group 02's cup-stacking task environment."@en ;
+    cap:canBeManipulatedBy g02:gripper01 ;
+    cap:hasAffordance g02:blueCupGraspingAffordance,
+        g02:blueCupStackingAffordance ;
+    cap:hasApproxWidth 0.070 ;
+    cap:hasColor "blue" ;
+    cap:hasObjectLabel "blue_cup" ;
+    cap:hasPoseFrame "world/object_blue_cup" ;
+    cap:hasTaskRole cap:TargetObject .
+
+g02:blueCupGraspingAffordance a cap:Affordance,
+        cap:GraspingAffordance ;
+    rdfs:label "blue cup grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of the blue cup; this is what triggers the GraspableObject inference."@en .
+
+g02:blueCupStackingAffordance a cap:Affordance,
+        cap:StackabilityAffordance ;
+    rdfs:label "blue cup stackability affordance"@en ;
+    rdfs:comment "Stackability affordance of the blue cup in the cup-stacking task."@en .
+
+g02:fork01 a _:n24e15451f98e4fcfb85943c93941ed80b1,
+        _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:Fork,
+        cap:GraspableObject,
+        cap:PhysicalObject ;
+    rdfs:label "fork 01"@en ;
+    rdfs:comment "Baseline fork instance for the cutlery-arrangement task."@en ;
+    cap:canBeManipulatedBy g02:gripper01 ;
+    cap:hasAffordance g02:forkGraspingAffordance ;
+    cap:hasApproxWidth 0.025 ;
+    cap:hasColor "silver" ;
+    cap:hasObjectLabel "fork" ;
+    cap:hasPoseFrame "world/object_fork" ;
+    cap:hasTaskRole cap:TargetObject .
+
+g02:forkGraspingAffordance a cap:Affordance,
+        cap:GraspingAffordance ;
+    rdfs:label "fork grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of the fork."@en .
+
+g02:group02 a foaf:Group ;
+    foaf:member g02:m112550027,
+        g02:m112550116,
+        g02:m112550117,
+        g02:m112550128,
+        g02:m112550148,
+        g02:m112550166 ;
+    foaf:name "AI Capstone 2026 Group 02"@en .
+
+g02:knife01 a _:n24e15451f98e4fcfb85943c93941ed80b1,
+        _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:GraspableObject,
+        cap:Knife,
+        cap:PhysicalObject ;
+    rdfs:label "knife 01"@en ;
+    rdfs:comment "Baseline knife instance for the cutlery-arrangement task."@en ;
+    cap:canBeManipulatedBy g02:gripper01 ;
+    cap:hasAffordance g02:knifeGraspingAffordance ;
+    cap:hasApproxWidth 0.020 ;
+    cap:hasColor "silver" ;
+    cap:hasObjectLabel "knife" ;
+    cap:hasPoseFrame "world/object_knife" ;
+    cap:hasTaskRole cap:TargetObject .
+
+g02:knifeGraspingAffordance a cap:Affordance,
+        cap:GraspingAffordance ;
+    rdfs:label "knife grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of the knife."@en .
+
+g02:m112550027 a foaf:Person ;
+    rdfs:label "余逸翔 (112550027)"@zh ;
+    dcterms:identifier "112550027" ;
+    foaf:name "余逸翔"@zh .
+
+g02:m112550116 a foaf:Person ;
+    rdfs:label "張祐廷 (112550116)"@zh ;
+    dcterms:identifier "112550116" ;
+    foaf:name "張祐廷"@zh .
+
+g02:m112550117 a foaf:Person ;
+    rdfs:label "張盛瑋 (112550117)"@zh ;
+    dcterms:identifier "112550117" ;
+    foaf:name "張盛瑋"@zh .
+
+g02:m112550128 a foaf:Person ;
+    rdfs:label "彭程 (112550128)"@zh ;
+    dcterms:identifier "112550128" ;
+    foaf:name "彭程"@zh .
+
+g02:m112550148 a foaf:Person ;
+    rdfs:label "周宇彥 (112550148)"@zh ;
+    dcterms:identifier "112550148" ;
+    foaf:name "周宇彥"@zh .
+
+g02:m112550166 a foaf:Person ;
+    rdfs:label "張紹安 (112550166)"@zh ;
+    dcterms:identifier "112550166" ;
+    foaf:name "張紹安"@zh .
+
+g02:pinkCup01 a _:n24e15451f98e4fcfb85943c93941ed80b1,
+        _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb2,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:Cup,
+        cap:GraspableObject,
+        cap:PhysicalObject ;
+    rdfs:label "pink cup 01"@en ;
+    rdfs:comment "The pink cup instance in Group 02's cup-stacking task environment."@en ;
+    cap:canBeManipulatedBy g02:gripper01 ;
+    cap:hasAffordance g02:pinkCupGraspingAffordance,
+        g02:pinkCupStackingAffordance ;
+    cap:hasApproxWidth 0.070 ;
+    cap:hasColor "pink" ;
+    cap:hasObjectLabel "pink_cup" ;
+    cap:hasPoseFrame "world/object_pink_cup" ;
+    cap:hasTaskRole cap:TargetObject .
+
+g02:pinkCupGraspingAffordance a cap:Affordance,
+        cap:GraspingAffordance ;
+    rdfs:label "pink cup grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of the pink cup."@en .
+
+g02:pinkCupStackingAffordance a cap:Affordance,
+        cap:StackabilityAffordance ;
+    rdfs:label "pink cup stackability affordance"@en ;
+    rdfs:comment "Stackability affordance of the pink cup in the cup-stacking task."@en .
+
+g02:plate01 a _:nacdea7238cc94273af924a4b1fa6333fb5,
+        cap:PhysicalObject,
+        cap:Plate ;
+    rdfs:label "plate 01"@en ;
+    rdfs:comment "Baseline plate instance, used as the placement reference in the cutlery-arrangement task — not a grasp target."@en ;
+    cap:hasAffordance g02:plateSupportAffordance ;
+    cap:hasApproxWidth 0.220 ;
+    cap:hasColor "white" ;
+    cap:hasObjectLabel "plate" ;
+    cap:hasPoseFrame "world/object_plate" ;
+    cap:hasTaskRole cap:ReferenceObject .
+
+g02:plateSupportAffordance a cap:Affordance,
+        cap:SupportAffordance ;
+    rdfs:label "plate support affordance"@en ;
+    rdfs:comment "Support affordance of the plate. The plate has NO grasping affordance, so it is not inferred as graspable."@en .
+
+g02:toyBlock01 a _:n24e15451f98e4fcfb85943c93941ed80b1,
+        _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:GraspableObject,
+        cap:PhysicalObject,
+        cap:ToyBlock ;
+    rdfs:label "toy block 01"@en ;
+    rdfs:comment "A red toy block to be collected into the basket."@en ;
+    cap:canBeManipulatedBy g02:gripper01 ;
+    cap:hasAffordance g02:toyBlock01GraspingAffordance ;
+    cap:hasApproxWidth 0.040 ;
+    cap:hasColor "red" ;
+    cap:hasObjectLabel "toy_block" ;
+    cap:hasPoseFrame "world/object_block_01" ;
+    cap:hasTaskRole cap:CollectableObject .
+
+g02:toyBlock01GraspingAffordance a cap:Affordance,
+        cap:GraspingAffordance ;
+    rdfs:label "toy block 01 grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of toy block 01."@en .
+
+g02:toyBlock02 a _:n24e15451f98e4fcfb85943c93941ed80b1,
+        _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6,
+        cap:GraspableObject,
+        cap:PhysicalObject,
+        cap:ToyBlock ;
+    rdfs:label "toy block 02"@en ;
+    rdfs:comment "A yellow toy block to be collected into the basket."@en ;
+    cap:canBeManipulatedBy g02:gripper01 ;
+    cap:hasAffordance g02:toyBlock02GraspingAffordance ;
+    cap:hasApproxWidth 0.040 ;
+    cap:hasColor "yellow" ;
+    cap:hasObjectLabel "toy_block" ;
+    cap:hasPoseFrame "world/object_block_02" ;
+    cap:hasTaskRole cap:CollectableObject .
+
+g02:toyBlock02GraspingAffordance a cap:Affordance,
+        cap:GraspingAffordance ;
+    rdfs:label "toy block 02 grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of toy block 02."@en .
+
+"2026-05-22"^^xsd:date a rdfs:Literal,
+        xsd:date .
+
+"2026-05-31"^^xsd:date a rdfs:Literal,
+        xsd:date .
+
+0.020 a rdfs:Literal,
+        xsd:decimal .
+
+0.025 a rdfs:Literal,
+        xsd:decimal .
+
+0.085 a rdfs:Literal,
+        xsd:decimal .
+
+0.220 a rdfs:Literal,
+        xsd:decimal .
+
+0.300 a rdfs:Literal,
+        xsd:decimal .
+
+"basket" a rdfs:Literal,
+        xsd:string .
+
+"blue" a rdfs:Literal,
+        xsd:string .
+
+"blue_cup" a rdfs:Literal,
+        xsd:string .
+
+"brown" a rdfs:Literal,
+        xsd:string .
+
+"fork" a rdfs:Literal,
+        xsd:string .
+
+"knife" a rdfs:Literal,
+        xsd:string .
+
+"pink" a rdfs:Literal,
+        xsd:string .
+
+"pink_cup" a rdfs:Literal,
+        xsd:string .
+
+"plate" a rdfs:Literal,
+        xsd:string .
+
+"red" a rdfs:Literal,
+        xsd:string .
+
+"white" a rdfs:Literal,
+        xsd:string .
+
+"world/object_basket" a rdfs:Literal,
+        xsd:string .
+
+"world/object_block_01" a rdfs:Literal,
+        xsd:string .
+
+"world/object_block_02" a rdfs:Literal,
+        xsd:string .
+
+"world/object_blue_cup" a rdfs:Literal,
+        xsd:string .
+
+"world/object_fork" a rdfs:Literal,
+        xsd:string .
+
+"world/object_knife" a rdfs:Literal,
+        xsd:string .
+
+"world/object_pink_cup" a rdfs:Literal,
+        xsd:string .
+
+"world/object_plate" a rdfs:Literal,
+        xsd:string .
+
+"yellow" a rdfs:Literal,
+        xsd:string .
+
+dcterms:created a rdf:Property ;
+    rdfs:subPropertyOf dcterms:created ;
+    owl:equivalentProperty dcterms:created .
+
+dcterms:creator a rdf:Property ;
+    rdfs:subPropertyOf dcterms:creator ;
+    owl:equivalentProperty dcterms:creator .
+
+dcterms:description a rdf:Property ;
+    rdfs:subPropertyOf dcterms:description ;
+    owl:equivalentProperty dcterms:description .
+
+dcterms:identifier a rdf:Property ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    owl:equivalentProperty dcterms:identifier .
+
+dcterms:license a rdf:Property ;
+    rdfs:subPropertyOf dcterms:license ;
+    owl:equivalentProperty dcterms:license .
+
+dcterms:title a rdf:Property ;
+    rdfs:subPropertyOf dcterms:title ;
+    owl:equivalentProperty dcterms:title .
+
+vann:preferredNamespacePrefix a rdf:Property ;
+    rdfs:subPropertyOf vann:preferredNamespacePrefix ;
+    owl:equivalentProperty vann:preferredNamespacePrefix .
+
+vann:preferredNamespaceUri a rdf:Property ;
+    rdfs:subPropertyOf vann:preferredNamespaceUri ;
+    owl:equivalentProperty vann:preferredNamespaceUri .
+
+rdf:first a rdf:Property ;
+    rdfs:subPropertyOf rdf:first ;
+    owl:equivalentProperty rdf:first .
+
+rdf:rest a rdf:Property ;
+    rdfs:subPropertyOf rdf:rest ;
+    owl:equivalentProperty rdf:rest .
+
+rdf:type a rdf:Property ;
+    rdfs:subPropertyOf rdf:type ;
+    owl:equivalentProperty rdf:type .
+
+rdfs:comment a rdf:Property,
+        owl:AnnotationProperty ;
+    rdfs:subPropertyOf rdfs:comment ;
+    owl:equivalentProperty rdfs:comment .
+
+rdfs:domain a rdf:Property ;
+    rdfs:subPropertyOf rdfs:domain ;
+    owl:equivalentProperty rdfs:domain .
+
+rdfs:label a rdf:Property,
+        owl:AnnotationProperty ;
+    rdfs:subPropertyOf rdfs:label ;
+    owl:equivalentProperty rdfs:label .
+
+rdfs:range a rdf:Property ;
+    rdfs:subPropertyOf rdfs:range ;
+    owl:equivalentProperty rdfs:range .
+
+rdfs:subClassOf a rdf:Property ;
+    rdfs:subPropertyOf rdfs:subClassOf ;
+    owl:equivalentProperty rdfs:subClassOf .
+
+rdfs:subPropertyOf a rdf:Property ;
+    rdfs:subPropertyOf rdfs:subPropertyOf ;
+    owl:equivalentProperty rdfs:subPropertyOf .
+
+xsd:date a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+owl:equivalentClass a rdf:Property ;
+    rdfs:subPropertyOf owl:equivalentClass ;
+    owl:equivalentProperty owl:equivalentClass .
+
+owl:equivalentProperty a rdf:Property ;
+    rdfs:subPropertyOf owl:equivalentProperty ;
+    owl:equivalentProperty owl:equivalentProperty .
+
+owl:imports a rdf:Property ;
+    rdfs:subPropertyOf owl:imports ;
+    owl:equivalentProperty owl:imports .
+
+owl:intersectionOf a rdf:Property ;
+    rdfs:subPropertyOf owl:intersectionOf ;
+    owl:equivalentProperty owl:intersectionOf .
+
+owl:onProperty a rdf:Property ;
+    rdfs:subPropertyOf owl:onProperty ;
+    owl:equivalentProperty owl:onProperty .
+
+owl:sameAs a rdf:Property ;
+    rdfs:subPropertyOf owl:sameAs ;
+    owl:equivalentProperty owl:sameAs .
+
+owl:someValuesFrom a rdf:Property ;
+    rdfs:subPropertyOf owl:someValuesFrom ;
+    owl:equivalentProperty owl:someValuesFrom .
+
+skos:scopeNote a rdf:Property ;
+    rdfs:subPropertyOf skos:scopeNote ;
+    owl:equivalentProperty skos:scopeNote .
+
+foaf:mbox a rdf:Property ;
+    rdfs:subPropertyOf foaf:mbox ;
+    owl:equivalentProperty foaf:mbox .
+
+foaf:member a rdf:Property ;
+    rdfs:subPropertyOf foaf:member ;
+    owl:equivalentProperty foaf:member .
+
+foaf:name a rdf:Property ;
+    rdfs:subPropertyOf foaf:name ;
+    owl:equivalentProperty foaf:name .
+
+cap:canBeManipulatedBy a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "can be manipulated by"@en ;
+    rdfs:comment "Relates a physical object to an end effector capable of manipulating it."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:range rdfs:Resource,
+        owl:Thing,
+        cap:EndEffector ;
+    rdfs:subPropertyOf cap:canBeManipulatedBy ;
+    owl:equivalentProperty cap:canBeManipulatedBy .
+
+g02:hasContainerTarget a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "has container target"@en ;
+    rdfs:comment "Relates a task to the object that receives/collects other objects (e.g. the basket). Being a container target does NOT make an object graspable. Group 02 extension."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:Task ;
+    rdfs:range rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:subPropertyOf g02:hasContainerTarget ;
+    owl:equivalentProperty g02:hasContainerTarget .
+
+g02:hasMaxGripWidth a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "has maximum grip width"@en ;
+    rdfs:comment "Maximum object width (metres) an end effector can open to and grip. Group 02 extension relating gripper capability to object width (cap:hasApproxWidth)."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:EndEffector ;
+    rdfs:range rdfs:Literal,
+        xsd:decimal ;
+    rdfs:subPropertyOf g02:hasMaxGripWidth ;
+    owl:equivalentProperty g02:hasMaxGripWidth .
+
+cap:hasApproxWidth a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "has approximate width"@en ;
+    rdfs:comment "Records an approximate object width, which may be useful for checking whether an object fits within a gripper capability."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:range rdfs:Literal,
+        xsd:decimal ;
+    rdfs:subPropertyOf cap:hasApproxWidth ;
+    owl:equivalentProperty cap:hasApproxWidth .
+
+cap:hasColor a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "has color"@en ;
+    rdfs:comment "Records the perceived or assigned color of a physical object."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:range rdfs:Literal,
+        xsd:string ;
+    rdfs:subPropertyOf cap:hasColor ;
+    owl:equivalentProperty cap:hasColor .
+
+cap:hasObjectLabel a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "has object label"@en ;
+    rdfs:comment "Records the object label used by perception, simulation, or task documentation."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:range rdfs:Literal,
+        xsd:string ;
+    rdfs:subPropertyOf cap:hasObjectLabel ;
+    owl:equivalentProperty cap:hasObjectLabel .
+
+cap:hasPoseFrame a rdf:Property,
+        owl:DatatypeProperty ;
+    rdfs:label "has pose frame"@en ;
+    rdfs:comment "Links an ontology individual to a coordinate frame or pose-frame identifier used in perception, reconstruction, or simulation."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:range rdfs:Literal,
+        xsd:string ;
+    rdfs:subPropertyOf cap:hasPoseFrame ;
+    owl:equivalentProperty cap:hasPoseFrame .
+
+cap:hasReferenceObject a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "has reference object"@en ;
+    rdfs:comment "Relates a task to a physical object used as a spatial or semantic reference."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:Task ;
+    rdfs:range rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:subPropertyOf cap:hasReferenceObject ;
+    owl:equivalentProperty cap:hasReferenceObject .
+
+cap:hasTargetObject a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "has target object"@en ;
+    rdfs:comment "Relates a task to a physical object that is directly acted upon in that task."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:Task ;
+    rdfs:range rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:subPropertyOf cap:hasTargetObject ;
+    owl:equivalentProperty cap:hasTargetObject .
+
+cap:hasTaskRole a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "has task role"@en ;
+    rdfs:comment "Relates a physical object to the role it plays in a task."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:range rdfs:Resource,
+        owl:Thing,
+        cap:TaskRole ;
+    rdfs:subPropertyOf cap:hasTaskRole ;
+    owl:equivalentProperty cap:hasTaskRole .
+
+0.040 a rdfs:Literal,
+        xsd:decimal .
+
+0.070 a rdfs:Literal,
+        xsd:decimal .
+
+"silver" a rdfs:Literal,
+        xsd:string .
+
+"toy_block" a rdfs:Literal,
+        xsd:string .
+
+g02:gripper01 a cap:EndEffector ;
+    rdfs:label "parallel-jaw gripper 01"@en ;
+    rdfs:comment "The parallel-jaw gripper mounted on g02:robot01."@en ;
+    g02:hasMaxGripWidth 0.085 .
+
+xsd:decimal a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+cap:hasAffordance a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "has affordance"@en ;
+    rdfs:comment "Relates a physical object to an affordance associated with that object in the task context."@en ;
+    rdfs:domain rdfs:Resource,
+        owl:Thing,
+        cap:PhysicalObject ;
+    rdfs:range rdfs:Resource,
+        owl:Thing,
+        cap:Affordance ;
+    rdfs:subPropertyOf cap:hasAffordance ;
+    owl:equivalentProperty cap:hasAffordance .
+
+rdfs:Resource owl:equivalentClass rdfs:Resource,
+        owl:Thing .
+
+xsd:string a rdfs:Datatype,
+        owl:DataRange ;
+    rdfs:subClassOf rdfs:Literal .
+
+rdfs:Class rdfs:subClassOf owl:Class ;
+    owl:equivalentClass rdfs:Class,
+        owl:Class .
+
+owl:Class rdfs:subClassOf rdfs:Class ;
+    owl:equivalentClass rdfs:Class,
+        owl:Class .
+
+rdfs:Datatype rdfs:subClassOf owl:DataRange ;
+    owl:equivalentClass rdfs:Datatype,
+        owl:DataRange .
+
+owl:DataRange rdfs:subClassOf rdfs:Datatype ;
+    owl:equivalentClass rdfs:Datatype,
+        owl:DataRange .
+
+rdfs:Literal a rdfs:Datatype,
+        owl:DataRange ;
+    owl:equivalentClass rdfs:Literal .
+
+_:nacdea7238cc94273af924a4b1fa6333fb5 a owl:Restriction ;
+    owl:equivalentClass _:nacdea7238cc94273af924a4b1fa6333fb5 ;
+    owl:onProperty cap:hasAffordance ;
+    owl:someValuesFrom cap:SupportAffordance .
+
+_:nacdea7238cc94273af924a4b1fa6333fb7 a owl:Restriction ;
+    owl:equivalentClass _:nacdea7238cc94273af924a4b1fa6333fb7 ;
+    owl:onProperty cap:hasAffordance ;
+    owl:someValuesFrom cap:ContainmentAffordance .
+
+_:nacdea7238cc94273af924a4b1fa6333fb2 a owl:Restriction ;
+    owl:equivalentClass _:nacdea7238cc94273af924a4b1fa6333fb2 ;
+    owl:onProperty cap:hasAffordance ;
+    owl:someValuesFrom cap:StackabilityAffordance .
+
+_:nacdea7238cc94273af924a4b1fa6333fb1 a owl:Restriction ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:equivalentClass _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:onProperty cap:hasAffordance ;
+    owl:someValuesFrom cap:GraspingAffordance .
+
+_:nacdea7238cc94273af924a4b1fa6333fb3 a owl:Restriction ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:equivalentClass _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:onProperty cap:hasAffordance ;
+    owl:someValuesFrom cap:GraspingAffordance .
+
+_:nacdea7238cc94273af924a4b1fa6333fb4 a owl:Restriction ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:equivalentClass _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:onProperty cap:hasAffordance ;
+    owl:someValuesFrom cap:GraspingAffordance .
+
+_:nacdea7238cc94273af924a4b1fa6333fb6 a owl:Restriction ;
+    rdfs:subClassOf _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4 ;
+    owl:equivalentClass _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:onProperty cap:hasAffordance ;
+    owl:someValuesFrom cap:GraspingAffordance .
+
+_:n24e15451f98e4fcfb85943c93941ed80b2 a owl:Restriction ;
+    rdfs:subClassOf _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:equivalentClass _:n24e15451f98e4fcfb85943c93941ed80b2,
+        _:nacdea7238cc94273af924a4b1fa6333fb1,
+        _:nacdea7238cc94273af924a4b1fa6333fb3,
+        _:nacdea7238cc94273af924a4b1fa6333fb4,
+        _:nacdea7238cc94273af924a4b1fa6333fb6 ;
+    owl:onProperty cap:hasAffordance ;
+    owl:someValuesFrom cap:GraspingAffordance .
+

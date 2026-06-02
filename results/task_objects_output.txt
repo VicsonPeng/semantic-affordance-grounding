@@ -1,0 +1,15 @@
+# Query: queries/task_objects.rq
+# Executed over the OWL RL inferred model.
+
+object     | type     | role              | affordances                                | graspable
+-----------+----------+-------------------+--------------------------------------------+----------
+basket01   | Basket   | ContainerTarget   | ContainmentAffordance                      |          
+blueCup01  | Cup      | TargetObject      | GraspingAffordance, StackabilityAffordance | yes      
+fork01     | Fork     | TargetObject      | GraspingAffordance                         | yes      
+knife01    | Knife    | TargetObject      | GraspingAffordance                         | yes      
+pinkCup01  | Cup      | TargetObject      | GraspingAffordance, StackabilityAffordance | yes      
+plate01    | Plate    | ReferenceObject   | SupportAffordance                          |          
+toyBlock01 | ToyBlock | CollectableObject | GraspingAffordance                         | yes      
+toyBlock02 | ToyBlock | CollectableObject | GraspingAffordance                         | yes      
+
+(8 row(s))
