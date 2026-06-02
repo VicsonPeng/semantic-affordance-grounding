@@ -10,7 +10,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
 # ==============================================================
-# Ontology Metadata
+# Ontology Metadata  (Person A — repo + skeleton)
 # ==============================================================
 
 <https://hcis.io/ontology/aicapstone/2026/group02>
@@ -18,10 +18,10 @@
     owl:imports <https://hcis.io/ontology/aicapstone/2026> ;
     rdfs:label "AI Capstone 2026 Group 02 Ontology"@en ;
     rdfs:comment
-        "Group 02 ontology for semantic affordance grounding of the cup-stacking task in the AI Capstone 2026 course project."@en ;
+        "Group 02 ontology for semantic affordance grounding. The primary task is cup stacking; the cutlery-arrangement and toy-block-collection baseline objects are also modeled. It imports the shared course vocabulary, supplies the GraspableObject inference rule, and declares the task object instances."@en ;
     dcterms:title "AI Capstone 2026 Group 02 Ontology"@en ;
     dcterms:description
-        "This ontology extends the course affordance vocabulary with group-specific object instances and graspability inference rules for the cup-stacking task environment."@en ;
+        "This ontology extends the course affordance vocabulary with group-specific object instances, a gripper-capability extension, and the graspability inference rule for the Group 02 task environment."@en ;
     dcterms:creator g02:group02 ;
     dcterms:created "2026-05-31"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -30,67 +30,42 @@
 
 g02:group02
     a foaf:Group ;
-    foaf:name "AI Capstone 2026 Group 02"@en .
+    foaf:name "AI Capstone 2026 Group 02"@en ;
+    foaf:member g02:m112550128 , g02:m112550148 , g02:m112550166 ,
+                g02:m112550027 , g02:m112550117 , g02:m112550116 .
+
+g02:m112550128 a foaf:Person ; rdfs:label "彭程 (112550128)"@zh ;   foaf:name "彭程"@zh ;   dcterms:identifier "112550128" .
+g02:m112550148 a foaf:Person ; rdfs:label "周宇彥 (112550148)"@zh ; foaf:name "周宇彥"@zh ; dcterms:identifier "112550148" .
+g02:m112550166 a foaf:Person ; rdfs:label "張紹安 (112550166)"@zh ; foaf:name "張紹安"@zh ; dcterms:identifier "112550166" .
+g02:m112550027 a foaf:Person ; rdfs:label "余逸翔 (112550027)"@zh ; foaf:name "余逸翔"@zh ; dcterms:identifier "112550027" .
+g02:m112550117 a foaf:Person ; rdfs:label "張盛瑋 (112550117)"@zh ; foaf:name "張盛瑋"@zh ; dcterms:identifier "112550117" .
+g02:m112550116 a foaf:Person ; rdfs:label "張祐廷 (112550116)"@zh ; foaf:name "張祐廷"@zh ; dcterms:identifier "112550116" .
 
 # ==============================================================
-# TODO: Person B — GraspableObject Inference Rule
+# Person B — GraspableObject Inference Rule
 #
-# Define cap:GraspableObject using owl:equivalentClass so that
-# the reasoner can infer which individuals are graspable.
+# cap:GraspableObject is a reserved course term (spec §8) that the provided
+# course-affordance.ttl ships without a defining axiom. We supply the OWL
+# serialization of the reasoning pattern from spec Listing 5 so a reasoner can
+# DERIVE graspability instead of it being asserted on individuals:
 #
-# Pattern (from Section 11 of homework PDF):
-#
-#   cap:GraspableObject
-#       a owl:Class ;
-#       owl:equivalentClass [
-#           a owl:Class ;
-#           owl:intersectionOf (
-#               cap:PhysicalObject
-#               [ a owl:Restriction ;
-#                 owl:onProperty cap:hasAffordance ;
-#                 owl:someValuesFrom cap:GraspingAffordance ]
-#           )
-#       ] .
-#
-# Add rdfs:label and rdfs:comment to this class as well.
+#   cap:GraspableObject  ≡  cap:PhysicalObject
+#                           ⊓ ∃ cap:hasAffordance.cap:GraspingAffordance
 # ==============================================================
 
-
-
-# ==============================================================
-# TODO: Person C — Cup Stacking Instances (Primary Task)
-#
-# Define at minimum:
-#   g02:blueCup01   a cap:Cup
-#   g02:pinkCup01   a cap:Cup
-#
-# Each instance should include:
-#   cap:hasAffordance      (link to a GraspingAffordance individual)
-#   cap:hasTaskRole        cap:TargetObject
-#   cap:hasColor           "blue" / "pink"
-#   cap:hasObjectLabel     (label used in your course project, e.g. "blue_cup")
-#   cap:hasPoseFrame       (pose-frame id from your simulation, if available)
-#   rdfs:label             human-readable name
-#   rdfs:comment           short explanation
-#
-# Also define the affordance individuals, e.g.:
-#   g02:blueCupGraspingAffordance   a cap:GraspingAffordance
-#   g02:pinkCupGraspingAffordance   a cap:GraspingAffordance
-# ==============================================================
-
-
-
-# ==============================================================
-# TODO: Person D — Baseline Object Instances (Required by Section 10)
-#
-# Define at minimum:
-#   g02:knife01      a cap:Knife      → GraspingAffordance + TargetObject
-#   g02:fork01       a cap:Fork       → GraspingAffordance + TargetObject
-#   g02:plate01      a cap:Plate      → SupportAffordance  + ReferenceObject
-#   g02:toyBlock01   a cap:ToyBlock   → GraspingAffordance + CollectableObject
-#   g02:basket01     a cap:Basket     → ContainmentAffordance + ContainerTarget
-#
-# Each instance needs at minimum:
-#   cap:hasAffordance, cap:hasTaskRole, cap:hasObjectLabel
-#   rdfs:label, rdfs:comment
-# ==============================================================
+cap:GraspableObject
+    a owl:Class ;
+    rdfs:label "graspable object"@en ;
+    rdfs:comment
+        "A physical object that the reasoner classifies as graspable because it is a cap:PhysicalObject and has at least one cap:GraspingAffordance. Membership is INFERRED, never asserted directly on individuals."@en ;
+    skos:scopeNote
+        "Local reasoning target for this homework; not equivalent to any external role such as soma:MovedObject (see ontology/imports/course-alignment.ttl)."@en ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            cap:PhysicalObject
+            [ a owl:Restriction ;
+              owl:onProperty cap:hasAffordance ;
+              owl:someValuesFrom cap:GraspingAffordance ]
+        )
+    ] .
