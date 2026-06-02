@@ -149,3 +149,136 @@ g02:pinkCup01
     cap:hasApproxWidth "0.070"^^xsd:decimal ;
     cap:hasAffordance g02:pinkCupGraspingAffordance , g02:pinkCupStackingAffordance ;
     cap:canBeManipulatedBy g02:gripper01 .
+
+# ==============================================================
+# Person D — Baseline Object Instances (spec §10)
+# Knife/fork/toy blocks are grasp targets => graspable.
+# Plate (support only) and basket (containment only) are task-relevant but
+# NOT graspable — demonstrating task relevance != graspability (spec §6).
+# ==============================================================
+
+# --- Cutlery arrangement: knife, fork (grasp targets), plate (reference) ---
+g02:knifeGraspingAffordance
+    a cap:GraspingAffordance ;
+    rdfs:label "knife grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of the knife."@en .
+
+g02:knife01
+    a cap:Knife ;
+    rdfs:label "knife 01"@en ;
+    rdfs:comment "Baseline knife instance for the cutlery-arrangement task."@en ;
+    cap:hasColor "silver" ;
+    cap:hasObjectLabel "knife" ;
+    cap:hasTaskRole cap:TargetObject ;
+    cap:hasPoseFrame "world/object_knife" ;
+    cap:hasApproxWidth "0.020"^^xsd:decimal ;
+    cap:hasAffordance g02:knifeGraspingAffordance ;
+    cap:canBeManipulatedBy g02:gripper01 .
+
+g02:forkGraspingAffordance
+    a cap:GraspingAffordance ;
+    rdfs:label "fork grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of the fork."@en .
+
+g02:fork01
+    a cap:Fork ;
+    rdfs:label "fork 01"@en ;
+    rdfs:comment "Baseline fork instance for the cutlery-arrangement task."@en ;
+    cap:hasColor "silver" ;
+    cap:hasObjectLabel "fork" ;
+    cap:hasTaskRole cap:TargetObject ;
+    cap:hasPoseFrame "world/object_fork" ;
+    cap:hasApproxWidth "0.025"^^xsd:decimal ;
+    cap:hasAffordance g02:forkGraspingAffordance ;
+    cap:canBeManipulatedBy g02:gripper01 .
+
+g02:plateSupportAffordance
+    a cap:SupportAffordance ;
+    rdfs:label "plate support affordance"@en ;
+    rdfs:comment "Support affordance of the plate. The plate has NO grasping affordance, so it is not inferred as graspable."@en .
+
+g02:plate01
+    a cap:Plate ;
+    rdfs:label "plate 01"@en ;
+    rdfs:comment "Baseline plate instance, used as the placement reference in the cutlery-arrangement task — not a grasp target."@en ;
+    cap:hasColor "white" ;
+    cap:hasObjectLabel "plate" ;
+    cap:hasTaskRole cap:ReferenceObject ;
+    cap:hasPoseFrame "world/object_plate" ;
+    cap:hasApproxWidth "0.220"^^xsd:decimal ;
+    cap:hasAffordance g02:plateSupportAffordance .
+
+# --- Toy block collection: toy blocks (grasp targets), basket (container) ---
+g02:toyBlock01GraspingAffordance
+    a cap:GraspingAffordance ;
+    rdfs:label "toy block 01 grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of toy block 01."@en .
+
+g02:toyBlock01
+    a cap:ToyBlock ;
+    rdfs:label "toy block 01"@en ;
+    rdfs:comment "A red toy block to be collected into the basket."@en ;
+    cap:hasColor "red" ;
+    cap:hasObjectLabel "toy_block" ;
+    cap:hasTaskRole cap:CollectableObject ;
+    cap:hasPoseFrame "world/object_block_01" ;
+    cap:hasApproxWidth "0.040"^^xsd:decimal ;
+    cap:hasAffordance g02:toyBlock01GraspingAffordance ;
+    cap:canBeManipulatedBy g02:gripper01 .
+
+g02:toyBlock02GraspingAffordance
+    a cap:GraspingAffordance ;
+    rdfs:label "toy block 02 grasping affordance"@en ;
+    rdfs:comment "Grasping affordance of toy block 02."@en .
+
+g02:toyBlock02
+    a cap:ToyBlock ;
+    rdfs:label "toy block 02"@en ;
+    rdfs:comment "A yellow toy block to be collected into the basket."@en ;
+    cap:hasColor "yellow" ;
+    cap:hasObjectLabel "toy_block" ;
+    cap:hasTaskRole cap:CollectableObject ;
+    cap:hasPoseFrame "world/object_block_02" ;
+    cap:hasApproxWidth "0.040"^^xsd:decimal ;
+    cap:hasAffordance g02:toyBlock02GraspingAffordance ;
+    cap:canBeManipulatedBy g02:gripper01 .
+
+g02:basketContainmentAffordance
+    a cap:ContainmentAffordance ;
+    rdfs:label "basket containment affordance"@en ;
+    rdfs:comment "Containment affordance of the basket. The basket has NO grasping affordance, so it is not inferred as graspable."@en .
+
+g02:basket01
+    a cap:Basket ;
+    rdfs:label "basket 01"@en ;
+    rdfs:comment "Baseline basket instance, the container target in the toy-block-collection task — not a grasp target."@en ;
+    cap:hasColor "brown" ;
+    cap:hasObjectLabel "basket" ;
+    cap:hasTaskRole cap:ContainerTarget ;
+    cap:hasPoseFrame "world/object_basket" ;
+    cap:hasApproxWidth "0.300"^^xsd:decimal ;
+    cap:hasAffordance g02:basketContainmentAffordance .
+
+# ==============================================================
+# Task individuals
+# ==============================================================
+
+g02:cupStackingTask
+    a cap:ManipulationTask ;
+    rdfs:label "cup stacking task"@en ;
+    rdfs:comment "Primary task: stack the blue and pink cups; both cups are manipulation targets."@en ;
+    cap:hasTargetObject g02:blueCup01 , g02:pinkCup01 .
+
+g02:cutleryArrangementTask
+    a cap:ManipulationTask ;
+    rdfs:label "cutlery arrangement task"@en ;
+    rdfs:comment "Arrange the knife and fork relative to the plate; the plate is the placement reference."@en ;
+    cap:hasTargetObject g02:knife01 , g02:fork01 ;
+    cap:hasReferenceObject g02:plate01 .
+
+g02:toyBlockCollectionTask
+    a cap:ManipulationTask ;
+    rdfs:label "toy block collection task"@en ;
+    rdfs:comment "Collect the toy blocks into the basket; the basket is the container target."@en ;
+    cap:hasTargetObject g02:toyBlock01 , g02:toyBlock02 ;
+    g02:hasContainerTarget g02:basket01 .
