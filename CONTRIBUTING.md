@@ -2,14 +2,14 @@
 
 ## 分工總覽
 
-| 人員 | 負責項目 | 修改的檔案 |
-|------|---------|-----------|
-| A    | Repo 架構 + 本體骨架 | `ontology/group-ontology.ttl`（已完成骨架） |
-| B    | GraspableObject 推論規則 | `ontology/group-ontology.ttl`（填 Person B 區塊） |
-| C    | 杯子疊放實例 | `ontology/group-ontology.ttl`（填 Person C 區塊） |
-| D    | Baseline 物件實例 | `ontology/group-ontology.ttl`（填 Person D 區塊） |
-| E    | OWL 推論 + SPARQL | `ontology/inferred-results.ttl`、`queries/`、`results/` |
-| F    | README + 報告 + Widoco | `README.md`、`report.md` |
+| 人員 | 組員 (學號) | 負責項目 | 修改的檔案 |
+|------|------------|---------|-----------|
+| A    | 彭程 (112550128)   | Repo 架構 + 本體骨架 | `ontology/group-ontology.ttl`（骨架）✅ |
+| B    | 周宇彥 (112550148) | GraspableObject 推論規則 | `ontology/group-ontology.ttl`（Person B 區塊）✅ |
+| C    | 張紹安 (112550166) | 杯子疊放實例 | `ontology/group-ontology.ttl`（Person C 區塊）✅ |
+| D    | 余逸翔 (112550027) | Baseline 物件實例 | `ontology/group-ontology.ttl`（Person D 區塊）✅ |
+| E    | 張盛瑋 (112550117) | OWL 推論 + SPARQL | `src/reason_and_query.py`、`ontology/inferred-results.ttl`、`queries/`、`results/` ✅ |
+| F    | 張祐廷 (112550116) | README + 報告 | `README.md`、`report.md` ✅ |
 
 ---
 
