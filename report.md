@@ -10,7 +10,7 @@
 
 The goal is a small but semantically explicit ontology that lets a robot ground
 the objects it perceives in the course tasks and **infer** which are graspable.
-Work was split across the group (see `CONTRIBUTING.md`):
+Work was split across the group:
 
 | Role | Member | Deliverable |
 |---|---|---|

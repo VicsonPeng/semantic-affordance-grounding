@@ -36,7 +36,6 @@ plate) and **Toy Block Collection** (toy blocks, basket).
 semantic-affordance-grounding/
 ├── README.md
 ├── report.md / report.pdf
-├── CONTRIBUTING.md                  # group division of labour + workflow
 ├── ontology/
 │   ├── group-ontology.ttl           # Group 02 authored ontology (main file)
 │   ├── inferred-results.ttl         # inferred graph after OWL reasoning
@@ -120,14 +119,14 @@ i.e. `GraspableObject ≡ PhysicalObject ⊓ ∃ hasAffordance.GraspingAffordanc
 
 | Instance | Type | Task role | Affordances | **Graspable?** |
 |----------|------|-----------|-------------|----------------|
-| `g02:blueCup01` | `cap:Cup` | TargetObject | Grasping, Stackability | ✅ inferred |
-| `g02:pinkCup01` | `cap:Cup` | TargetObject | Grasping, Stackability | ✅ inferred |
-| `g02:knife01` | `cap:Knife` | TargetObject | Grasping | ✅ inferred |
-| `g02:fork01` | `cap:Fork` | TargetObject | Grasping | ✅ inferred |
-| `g02:toyBlock01` | `cap:ToyBlock` | CollectableObject | Grasping | ✅ inferred |
-| `g02:toyBlock02` | `cap:ToyBlock` | CollectableObject | Grasping | ✅ inferred |
-| `g02:plate01` | `cap:Plate` | ReferenceObject | Support | ❌ (no grasping affordance) |
-| `g02:basket01` | `cap:Basket` | ContainerTarget | Containment | ❌ (no grasping affordance) |
+| `g02:blueCup01` | `cap:Cup` | TargetObject | Grasping, Stackability | Yes (inferred) |
+| `g02:pinkCup01` | `cap:Cup` | TargetObject | Grasping, Stackability | Yes (inferred) |
+| `g02:knife01` | `cap:Knife` | TargetObject | Grasping | Yes (inferred) |
+| `g02:fork01` | `cap:Fork` | TargetObject | Grasping | Yes (inferred) |
+| `g02:toyBlock01` | `cap:ToyBlock` | CollectableObject | Grasping | Yes (inferred) |
+| `g02:toyBlock02` | `cap:ToyBlock` | CollectableObject | Grasping | Yes (inferred) |
+| `g02:plate01` | `cap:Plate` | ReferenceObject | Support | No (no grasping affordance) |
+| `g02:basket01` | `cap:Basket` | ContainerTarget | Containment | No (no grasping affordance) |
 
 **Design choice:** the plate and basket are deliberately modeled *without* a
 grasping affordance. They are relevant to their tasks (placement reference /
